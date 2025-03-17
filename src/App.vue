@@ -4,7 +4,7 @@
       <side-menu></side-menu>
 
       <div class="w-100">
-        <div class="header bg-dark bg-gradient"></div>
+        <div class="header bg-dark"></div>
 
         <div class="p-3">
           <router-view />
@@ -46,6 +46,6 @@ export default {
 .header {
   width: 100%;
   height: 30px;
-  background-color: blue;
+  background: url("./assets/patern.jpg");
 }
 </style>

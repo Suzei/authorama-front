@@ -1,6 +1,7 @@
 <template>
   <aside id="side-menu" class="col-3 shadow rounded-3 aside-menu bg-ligth">
-    <div class="d-flex gap-3 flex-column align-items-center pb-4">
+    <div class="aside-header"></div>
+    <div class="d-flex gap-3 flex-column align-items-center">
       <div class="avatar-image">
         <img src="../../assets/satriani.webp" alt="..." />
       </div>
@@ -34,22 +35,33 @@ export default {
 #side-menu {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
+  gap: 1rem;
   max-width: 350px;
 
   background-color: white;
 
-  .nav-link {
-    display: flex;
-    align-items: center;
-    font-size: 1.4rem;
-    color: black;
-    gap: 1rem;
+  .aside-header {
+    height: 100%;
+    max-height: 200px;
+    width: 100%;
+    background: url("../../assets/patern.jpg");
+  }
 
-    &:hover {
-      color: #6c757d;
-      cursor: pointer;
+  nav {
+    .nav-link {
+      display: flex;
+      align-items: center;
+      font-size: 1.4rem;
+      color: black;
+      gap: 1rem;
+
+      &:hover {
+        color: #6c757d;
+        cursor: pointer;
+      }
     }
   }
 
@@ -62,6 +74,7 @@ export default {
 .avatar-image {
   height: 150px;
   width: 150px;
+  margin-top: -70px;
 
   img {
     width: 100%;
