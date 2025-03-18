@@ -16,6 +16,7 @@
 
 <script>
 import SideMenu from "./components/SideMenu/SideMenu.vue";
+import "./styles/animation.scss";
 
 export default {
   components: {

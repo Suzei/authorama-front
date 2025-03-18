@@ -1,11 +1,26 @@
 <template>
-  <div class="d-flex col-12 flex-column">
-    <h2>É O TEMPLATE</h2>
+  <div class="row row-gap-3 gx-4 p-5">
+    <h2><i class="bi bi-house"></i> Início</h2>
+    <div class="row">
+      <div class="col-6 d-flex flex-column gap-5">
+        <balance-card></balance-card>
+        <balance-card></balance-card>
+      </div>
+      <div class="col-6 d-flex flex-column gap-5">
+        <balance-card></balance-card>
+        <balance-card></balance-card>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import BalanceCard from "@/components/Card/BalanceCard.vue";
+
 export default {
+  components: {
+    BalanceCard,
+  },
   methods: {
     openModal() {
       this.$refs.responsiveModalRef.openModal();

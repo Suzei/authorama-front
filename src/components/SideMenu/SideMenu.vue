@@ -1,6 +1,6 @@
 <template>
   <aside id="side-menu" class="col-3 shadow rounded-3 aside-menu bg-ligth">
-    <div class="aside-header"></div>
+    <div class="aside-header h-100"></div>
     <div class="d-flex gap-3 flex-column align-items-center">
       <div class="avatar-image">
         <img src="../../assets/satriani.webp" alt="..." />
