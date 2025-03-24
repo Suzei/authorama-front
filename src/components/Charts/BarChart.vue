@@ -24,8 +24,8 @@ export default {
   data: () => {
     return {
       chartData: {
-        labels: ["January", "February", "March"],
-        datasets: [{ data: [40, 20, 12] }],
+        labels: ["January", "February", "March", "1", "2", "3", "4"],
+        datasets: [{ data: [40, 20, 12, 19, 20, 21, 22] }],
       },
     };
   },

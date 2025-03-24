@@ -1,8 +1,7 @@
 <template>
-  <div class="fadeIn col-12 w-100 row p-4 border-2 shadow bg-white">
-    <slot>
-      <h4><i :class="icon"></i>{{ card_title }}</h4>
-    </slot>
+  <div class="fadeIn h-100 col-12 w-100 col-6 p-4 border-2 shadow bg-white">
+    <h4 class="d-flex gap-2"><i :class="icon"></i>{{ card_title }}</h4>
+    <slot> </slot>
   </div>
 </template>
 

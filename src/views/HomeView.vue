@@ -1,25 +1,44 @@
 <template>
-  <div class="row row-gap-3 gx-4 p-5">
+  <div class="container pt-2 row-gap-3">
     <h2><i class="bi bi-house"></i> Início</h2>
-    <div class="row">
-      <div class="col-6 d-flex flex-column gap-5">
+    <div class="row col-12">
+      <div class="dashboard-content">
         <balance-card></balance-card>
-        <balance-card></balance-card>
-      </div>
-      <div class="col-6 d-flex flex-column gap-5">
-        <balance-card></balance-card>
-        <balance-card></balance-card>
+        <book-card></book-card>
+        <div></div>
+
+        <div class="d-flex flex-column">
+          <div class="authors">
+            <caroussel>
+              <authors
+                avatar_image="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQLJAwSSHNA63vmwu623ONomzdAfJs_oNgMWEIleEkbKFjVLBkMjRGCYC1e23dc0CWF8-SigE1btjrn1-ycf7n37g"
+              />
+            </caroussel>
+          </div>
+          <div class="">
+            <h4 class="d-flex align-items-center gap-2">
+              <i class="bi bi-book"></i> Livros
+            </h4>
+            <caroussel></caroussel>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Authors from "@/components/Authors/Authors.vue";
 import BalanceCard from "@/components/Card/BalanceCard.vue";
+import BookCard from "@/components/Card/BookCard.vue";
+import Caroussel from "@/components/Caroussel/Caroussel.vue";
 
 export default {
   components: {
     BalanceCard,
+    BookCard,
+    Caroussel,
+    Authors,
   },
   methods: {
     openModal() {
@@ -41,6 +60,7 @@ export default {
 .dashboard-content {
   display: grid;
   padding: 1rem;
-  grid-template-columns: 550px 1fr;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
 }
 </styles>
