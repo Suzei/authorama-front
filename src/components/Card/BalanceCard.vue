@@ -7,7 +7,7 @@
       <div v-if="!last_release">
         <span>Último lançamento - As aventuras de Pi</span>
         <div class="d-flex flex-column">
-          <h2 class="mb-0">R$ 3020 - <span>A semana</span></h2>
+          <h2 class="mb-0">{{ 3020 | formatCurrency }} - <span>A semana</span></h2>
           <div class="chart-bar">
             <bar-chart></bar-chart>
           </div>

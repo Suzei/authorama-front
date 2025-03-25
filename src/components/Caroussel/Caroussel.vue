@@ -2,7 +2,7 @@
   <div>
     <div ref="swiper" class="swiper">
       <div class="swiper-wrapper">
-        <slot class="swiper-slide"></slot>
+        <slot></slot>
         <!-- Slides -->
       </div>
       <!-- If we need pagination -->
@@ -26,11 +26,7 @@ import "swiper/css";
 
 export default {
   name: "carrousel-component",
-  data: () => {
-    return {
-      slides: null,
-    };
-  },
+
   mounted() {
     new Swiper(this.$refs.swiper, {
       modules: [Navigation],
@@ -62,5 +58,10 @@ export default {
   margin: 0;
   display: flex;
   padding: 12px;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  max-width: 450px;
 }
 </style>

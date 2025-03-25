@@ -1,19 +1,17 @@
 <template>
-  <div class="swiper-book">
-    <img :src="book.image" />
-    <span>{{ book.name }}</span>
+  <div class="swiper-slide swiper-book">
+    <img :src="image" />
+    <span>{{ name }}</span>
   </div>
 </template>
 
 <script>
 export default {
   name: "book-component",
+  props: ["name", "image"],
   data: () => {
     return {
-      book: {
-        name: null,
-        image: null,
-      },
+      work: null,
     };
   },
 };
