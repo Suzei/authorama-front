@@ -29,13 +29,18 @@ export default {
 
   methods: {
     openModal() {
-      this.$refs.responsiveModalRef.modalState();
-      this.showModal = !this.showModal;
+      this.showModal = true;
+      this.$nextTick(() => {
+        this.$refs.responsiveModalRef.modalState();
+      });
+    },
+    closeModal() {
+      this.showModal = false;
     },
   },
 
   mounted() {
-    console.log("Montado");
+    console.log("montado.");
   },
 };
 </script>

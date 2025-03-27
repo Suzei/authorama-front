@@ -1,6 +1,6 @@
 <template>
   <div class="container pt-2 row-gap-3">
-    <h2><i class="bi bi-house"></i> Início</h2>
+    <h2 class="py-2"><i class="bi bi-house"></i> Início</h2>
     <div class="row col-12">
       <div class="dashboard-content">
         <balance-card></balance-card>

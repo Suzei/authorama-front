@@ -69,7 +69,7 @@ export default {
 
   methods: {
     openModal() {
-      this.showModal = !this.showModal;
+      this.showModal = true;
       this.$nextTick(() => {
         this.$refs.viewMoreModal.openModal();
       });

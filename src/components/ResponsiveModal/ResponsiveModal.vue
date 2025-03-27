@@ -47,6 +47,14 @@ export default {
       window.scrollTo({ top: "100%" });
     },
   },
+
+  mounted() {
+    console.log("i was mounted");
+  },
+
+  updated() {
+    console.log("foi atualizado algum estado dentro dele.");
+  },
 };
 </script>
 

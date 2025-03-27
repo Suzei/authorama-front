@@ -1,12 +1,12 @@
 <template>
-  <div id="app">
-    <div class="d-flex flex-row p-y">
+  <div class="row" id="app">
+    <div class="d-flex flex-row">
       <side-menu></side-menu>
 
       <div class="w-100">
         <div class="header bg-dark"></div>
 
-        <div class="p-3">
+        <div class="">
           <router-view />
         </div>
       </div>

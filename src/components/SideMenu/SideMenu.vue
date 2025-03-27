@@ -1,33 +1,42 @@
 <template>
-  <aside id="side-menu" class="col-3 shadow rounded-3 aside-menu bg-ligth">
-    <div class="aside-header h-100"></div>
-    <div class="d-flex gap-3 flex-column align-items-center">
-      <div class="avatar-image">
-        <img src="../../assets/satriani.webp" alt="..." />
-      </div>
-      <span class="user-name">Joe Satriani</span>
-    </div>
+  <div id="side-menu">
+    <button class="btn btn-lg text-white d-flex" @click="showMenu = !showMenu">
+      <i :class="!showMenu ? ' bi bi-x' : 'bi bi-list'"></i>
+    </button>
 
-    <div class="d-flex flex-column align-items-center pb-5">
-      <span class="display-6 font-weight-bold">3213</span>
-      <span class="text-muted lead">Leitores</span>
-    </div>
+    <transition name="menu">
+      <keep-alive>
+        <div class="box" v-if="!showMenu">
+          <div></div>
+          <div class="">
+            <div>
+              <div></div>
+            </div>
 
-    <nav class="nav flex-column gap-4">
-      <router-link to="/" class="nav-link"><i class="bi bi-book"></i> Livros</router-link>
-      <router-link to="/about" class="nav-link"
-        ><i class="bi bi-people-fill"></i> Autores</router-link
-      >
-      <router-link to="/events" class="nav-link"
-        ><i class="bi bi-calendar-event"></i> Eventos</router-link
-      >
-    </nav>
-  </aside>
+            <nav class="menu-nav">
+              <router-link to="/">Dashboard</router-link>
+              <router-link to="/">Dashboard</router-link>
+            </nav>
+          </div>
+        </div>
+      </keep-alive>
+    </transition>
+  </div>
 </template>
 
 <script>
+import { RouterLink } from "vue-router";
+
 export default {
   name: "SideMenu",
+  components: {
+    RouterLink,
+  },
+  data: () => {
+    return {
+      showMenu: false,
+    };
+  },
 };
 </script>
 
@@ -35,53 +44,46 @@ export default {
 #side-menu {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  height: 100vh;
-  gap: 1rem;
-  max-width: 350px;
+  height: 100%;
+  background-color: #191919;
 
-  background-color: white;
-
-  .aside-header {
-    height: 100%;
-    max-height: 200px;
-    width: 100%;
-    background: url("../../assets/patern.jpg");
+  a {
+    color: white;
   }
 
-  nav {
-    .nav-link {
-      display: flex;
-      align-items: center;
-      font-size: 1.4rem;
-      color: black;
-      gap: 1rem;
-
-      &:hover {
-        color: #6c757d;
-        cursor: pointer;
-      }
-    }
-  }
-
-  .user-name {
-    font-weight: 700;
-    font-size: 16px;
+  .btn {
+    justify-self: flex-end;
   }
 }
 
-.avatar-image {
-  height: 150px;
-  width: 150px;
-  margin-top: -70px;
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 300px;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    overflow: hidden;
-    border-radius: 100%;
-  }
+  height: 100%;
+}
+
+.menu-enter-active,
+.menu-leave-active {
+  transition: width 0.5s;
+}
+
+.menu-enter,
+.menu-leave-to {
+  width: 100%;
+}
+
+.menu-enter-to,
+.menu-leave {
+  width: 0%;
+}
+nav {
+  display: flex;
+  justify-self: flex-start;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 18px;
 }
 </style>
